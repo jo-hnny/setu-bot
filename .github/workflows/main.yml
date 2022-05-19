@@ -1,5 +1,7 @@
 name: main
-on: push
+on:
+  schedule:
+    - cron: "30 01 * * *"
 jobs:
   notify:
     runs-on: ubuntu-18.04
