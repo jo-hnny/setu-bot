@@ -15,4 +15,4 @@ jobs:
       - name: running
         run: deno run --allow-net --allow-env app.ts
         env:
-          SEND_KEY: ${{ secrets.WEBHOOK_KEY }}
+          WEBHOOK_KEY: ${{ secrets.WEBHOOK_KEY }}
