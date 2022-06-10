@@ -1,7 +1,7 @@
 name: main
 on:
   schedule:
-    - cron: "30 01 * * *"
+    - cron: "30 0-12 * * *"
 jobs:
   notify:
     runs-on: ubuntu-18.04
