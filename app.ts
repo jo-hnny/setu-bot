@@ -1,19 +1,20 @@
-import { base64, Md5 } from "./deps.ts";
 import { webhook } from "./config.ts";
 import { getImage } from "./waifu.im.ts";
 
 async function start() {
-  const image = await getImage();
-
-  const imageData = base64.encode(image);
-
-  const md5 = new Md5().update(image).toString();
+  const { image, source } = await getImage();
 
   const body = {
-    msgtype: "image",
-    image: {
-      base64: imageData,
-      md5: md5,
+    msgtype: "news",
+    news: {
+      articles: [
+        {
+          title: "source",
+          description: source,
+          url: image,
+          picurl: image,
+        },
+      ],
     },
   };
 
